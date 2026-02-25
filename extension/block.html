@@ -99,10 +99,6 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        body.dark {
-            background: #111111;
-        }
-
         #bg {
             width: 100%;
             height: 100%;
@@ -113,14 +109,6 @@
             opacity: 0.3;
             position: absolute;
             z-index: 1;
-        }
-
-        .light #bg {
-            opacity: 0.3;
-        }
-
-        .dark #bg {
-            opacity: 0.05;
         }
 
         #wrapper {
@@ -147,10 +135,6 @@
             z-index: 100;
         }
 
-        .dark #quote {
-            color: #fff;
-        }
-
         #author {
             position: relative;
             font-size: 30px;
@@ -160,11 +144,6 @@
             display: block;
             text-align: center;
             z-index: 99;
-        }
-
-        .dark #author {
-            color: #fff;
-            opacity: 0.7;
         }
 
         #url {
@@ -184,15 +163,6 @@
 
         #info a {
             color: #999999;
-        }
-
-        .dark #info {
-            color: #ffffff;
-            opacity: 0.3;
-        }
-
-        .dark #info a {
-            color: #ffffff;
         }
 
         @media screen and (max-width: 1300px) {
@@ -273,6 +243,35 @@
                 display: none !important;
             }
         }
+
+        /* Dark theme styles */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #111111;
+            }
+
+            #bg {
+                opacity: 0.05;
+            }
+
+            #quote {
+                color: #fff;
+            }
+
+            #author {
+                color: #fff;
+                opacity: 0.7;
+            }
+
+            #info {
+                color: #ffffff;
+                opacity: 0.3;
+            }
+
+            #info a {
+                color: #ffffff;
+            }
+        }
     </style>
 </head>
 
@@ -283,7 +282,7 @@
             <cite id="author"></cite>
             <div id="bg"></div>
         </div>
-        <div id="info"><a href="" id="url"></a> blocked by <a href="https://heyfocus.com/?utm_source=focus_template">Focus</a> / <a href="" id="toggle-theme">Switch themes</a></div>
+        <div id="info"><a href="" id="url"></a> blocked by <a href="https://heyfocus.com/?utm_source=focus_template">Focus</a></div>
     </div>
     <script src="block.js"></script>
 </body>
