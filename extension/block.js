@@ -50,29 +50,4 @@ window.onpageshow = function (event) {
     }
 };
 
-function toggleTheme() {
-    var isDark = document.querySelector("body").classList.toggle("dark")
-    localStorage.removeItem("FocusIsDarkTheme");
-    localStorage.setItem("FocusIsDarkTheme", isDark);
-}
-
-function initialize() {
-    document.getElementById("toggle-theme").addEventListener("click", function (e) {
-        e.preventDefault();
-        toggleTheme();
-    });
-
-    var isDarkTheme = false;
-
-    try {
-        isDarkTheme = JSON.parse(localStorage.getItem("FocusIsDarkTheme"));
-    } catch (e) { }
-
-    if (isDarkTheme) {
-        toggleTheme();
-    }
-
-    updateState();
-}
-
-initialize();
+updateState();
